@@ -1,0 +1,26 @@
+default: &default
+  adapter:            postgresql
+  host:               localhost
+  schema_search_path: public
+  timeout: 5000
+  username: postgres
+  password: postgres
+
+development:
+  <<: *default
+  database: corporate_development
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test:
+  <<: *default
+  database: corporate_test
+
+production:
+  adapter: postgresql
+  host: ec2-54-163-253-94.compute-1.amazonaws.com
+  schema_search_path: public
+  database: d7tks39mld5v68
+  username: obykzwthssmotn
+  password: 'f7d8146495a46a4bfbaacf3df3fac4649cf2d8e7ad0e3b3beccc3d015b0768b4'

@@ -1,0 +1,47 @@
+<%= form_for(revenue) do |f| %>
+  <% if revenue.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(revenue.errors.count, "error") %> prohibited this revenue from being saved:</h2>
+
+      <ul>
+      <% revenue.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :company %>
+    <%= f.select :company_id, options_from_collection_for_select(Company.all, :id, :name, revenue.company_id), class: 'form-control' %>
+    <br /><br />
+  </div>
+
+  <div class="field">
+    <%= f.label :type_of_revenue %>
+    <%= f.select :type_of_revenue, options_for_select(['Cash', 'Insurance Payout', 'Refund', 'ERP', 'Early Checkout'], revenue.type_of_revenue) class: 'form-control' %>
+    <br /><br />
+  </div>
+
+  <div class="field">
+    <%= f.label :number_of_deals %>
+    <%= f.text_field :number_of_deals, class: 'form-control' %>
+    <br />
+  </div>
+
+  <div class="field">
+    <%= f.label :amount %>
+    <%= f.text_field :amount, class: 'form-control' %>
+    <br />
+  </div>
+
+  <div class="field">
+    <%= f.label :date %>
+    <%= f.date_field :date, class: 'form-control' %>
+    <br />
+  </div>
+
+  <div class="actions">
+     <%= f.submit 'Submit', class: 'btn btn-success' %>
+  </div>
+<% end %>
