@@ -17,6 +17,6 @@ class Api::V1::RevenuesController < Api::V1::BaseController
 
   private
   def revenue_params
-    params.require(:revenue).permit(Revenue.attribute_names)
+    params.require(:revenue).permit(:company_name, :type_of_revenue, :number_of_deals, :amount, :date)
   end
 end
