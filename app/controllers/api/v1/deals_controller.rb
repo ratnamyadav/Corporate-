@@ -6,7 +6,7 @@ class Api::V1::DealsController < Api::V1::BaseController
     if company.present?
       deal = company.deals.build(deals_params)
       if deal.save
-        render json: {revenue: deal.attributes}, status: 200
+        render json: {deal: deal.attributes}, status: 200
       else
         render json: {error: 'Failed to save the revenue', errors: formatted_error_messages(deal)}, status: 422
       end
