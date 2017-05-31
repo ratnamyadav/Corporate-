@@ -8,10 +8,10 @@ class Api::V1::DealsController < Api::V1::BaseController
       if deal.save
         render json: {deal: deal.attributes}, status: 200
       else
-        render json: {error: 'Failed to save the revenue', errors: formatted_error_messages(deal)}, status: 422
+        render json: {error: 'Failed to save the deal', errors: formatted_error_messages(deal)}, status: 422
       end
     else
-      render json: {error: 'Failed to save the revenue', errors: {company: 'Invalid company'}}, status: 422
+      render json: {error: 'Failed to save the deal', errors: {company: 'Invalid company'}}, status: 422
     end
   end
 
