@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170209185102) do
+ActiveRecord::Schema.define(version: 20170531212233) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,26 @@ ActiveRecord::Schema.define(version: 20170209185102) do
     t.string   "total_lease_amount"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+  end
+
+  create_table "deals", force: :cascade do |t|
+    t.integer  "company_id"
+    t.date     "date"
+    t.integer  "no_of_erp_closed",           default: 0
+    t.integer  "total_no_of_early_checkout", default: 0
+    t.integer  "total_no_of_erp",            default: 0
+    t.integer  "no_of_ms_closed",            default: 0
+    t.integer  "total_no_of_ms",             default: 0
+    t.integer  "unique_no_of_ms",            default: 0
+    t.integer  "no_of_cc_closed",            default: 0
+    t.integer  "total_no_of_cc",             default: 0
+    t.integer  "unique_no_of_cc",            default: 0
+    t.integer  "no_of_wsr_closed",           default: 0
+    t.integer  "total_no_of_wsr",            default: 0
+    t.integer  "unique_no_of_wsr",           default: 0
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
+    t.index ["company_id"], name: "index_deals_on_company_id", using: :btree
   end
 
   create_table "erp_operating_expenses", force: :cascade do |t|
@@ -116,6 +136,7 @@ ActiveRecord::Schema.define(version: 20170209185102) do
     t.integer  "company_id"
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
+    t.string   "sf_id"
   end
 
   create_table "sunshine_center_other_expenses", force: :cascade do |t|
@@ -178,4 +199,5 @@ ActiveRecord::Schema.define(version: 20170209185102) do
     t.datetime "updated_at",                  null: false
   end
 
+  add_foreign_key "deals", "companies"
 end

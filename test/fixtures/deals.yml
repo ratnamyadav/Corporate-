@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  company: one
+  date: 2017-06-01
+  no_of_erp_closed: 1
+  total_no_of_early_checkout: 1
+  total_no_of_erp: 1
+  no_of_ms_closed: 1
+  total_no_of_ms: 1
+  unique_no_of_ms: 1
+  no_of_cc_closed: 1
+  total_no_of_cc: 1
+  unique_no_of_cc: 1
+  no_of_wsr_closed: 1
+  total_no_of_wsr: 1
+  unique_no_of_wsr: 1
+
+two:
+  company: two
+  date: 2017-06-01
+  no_of_erp_closed: 1
+  total_no_of_early_checkout: 1
+  total_no_of_erp: 1
+  no_of_ms_closed: 1
+  total_no_of_ms: 1
+  unique_no_of_ms: 1
+  no_of_cc_closed: 1
+  total_no_of_cc: 1
+  unique_no_of_cc: 1
+  no_of_wsr_closed: 1
+  total_no_of_wsr: 1
+  unique_no_of_wsr: 1
