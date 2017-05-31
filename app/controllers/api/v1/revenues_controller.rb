@@ -1,7 +1,7 @@
 class Api::V1::RevenuesController < Api::V1::BaseController
 
   def create
-    company = Company.find_by(name: params["revenue"]["company_name"])
+    company = Company.find_by(id: params["revenue"]["company_id"])
     
     if company.present?
       revenue = company.revenues.build(revenue_params)
@@ -17,6 +17,7 @@ class Api::V1::RevenuesController < Api::V1::BaseController
 
   private
   def revenue_params
+    params[:date] = params[:created_date]
     params.require(:revenue).permit(:company_name, :type_of_revenue, :sf_id, :amount, :date)
   end
 end

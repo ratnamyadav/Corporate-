@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Company.delete_all
-Company.create([{name: 'Elite Rehab Placement'}, {name: 'Monarch Shores'}, {name: 'Solid Landings'}, {name: 'Willow Springs Recovery'}])
+Company.create([{name: 'Elite Rehab Placement'}, {name: 'Monarch Shores'}, {name: 'Willow Springs Recovery'}])
 
 User.delete_all
 user = User.new(email: 'admin@example.com', password:  'password123', password_confirmation: 'password123', admin: true)
