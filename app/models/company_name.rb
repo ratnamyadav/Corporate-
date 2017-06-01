@@ -1,2 +1,0 @@
-class CompanyName < ApplicationRecord
-end
