@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170601144940) do
+ActiveRecord::Schema.define(version: 20170601150644) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,7 +34,6 @@ ActiveRecord::Schema.define(version: 20170601144940) do
   end
 
   create_table "deals", force: :cascade do |t|
-    t.integer  "company_id"
     t.date     "date"
     t.integer  "no_of_erp_closed",           default: 0
     t.integer  "total_no_of_early_checkout", default: 0
@@ -51,7 +50,6 @@ ActiveRecord::Schema.define(version: 20170601144940) do
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
     t.string   "corporate_finance_id"
-    t.index ["company_id"], name: "index_deals_on_company_id", using: :btree
   end
 
   create_table "erp_operating_expenses", force: :cascade do |t|
@@ -200,5 +198,4 @@ ActiveRecord::Schema.define(version: 20170601144940) do
     t.datetime "updated_at",                  null: false
   end
 
-  add_foreign_key "deals", "companies"
 end
