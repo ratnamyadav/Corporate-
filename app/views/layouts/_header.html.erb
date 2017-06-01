@@ -17,7 +17,6 @@
           <ul class="nav navbar-nav">
             <li><a href="/">Dashboard</a></li>
             <% if current_user.admin? %>
-                <li><a href="/admin">Admin Panel</a></li>
                 <li><a href="/expenses_n_revenues">Revenues &amp; Expenses</a></li>
             <% end %>
             <% ['payroll_datas', 'digital_marketing_datas', 'miscellaneous_expenses'].each do |object| %>
@@ -52,6 +51,7 @@
                 <% if current_user.admin? %>
                     <li><a href="/companies">Manage Companies</a></li>
                     <li><a href="/users">Manage Users</a></li>
+                    <li><a href="/admin">Admin Panel</a></li>
                 <% end %>
                 <li class="divider"></li>
                 <li><a href="/users/sign_out" data-method='delete'>Log Out</a></li>
