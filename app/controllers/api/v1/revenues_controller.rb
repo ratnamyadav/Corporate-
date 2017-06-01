@@ -17,7 +17,7 @@ class Api::V1::RevenuesController < Api::V1::BaseController
 
   private
   def revenue_params
-    params[:date] = params[:created_date]
+    params[:revenue][:date] = params[:created_date]
     params.require(:revenue).permit(:company_name, :type_of_revenue, :sf_id, :amount, :date)
   end
 end

@@ -17,7 +17,7 @@ class Api::V1::DealsController < Api::V1::BaseController
 
   private
   def deals_params
-    params[:date] = params[:created_date]
+    params[:deal][:date] = params[:created_date]
     params.require(:deal).permit(:date, :no_of_erp_closed, :total_no_of_early_checkout, :total_no_of_erp, :no_of_ms_closed, :total_no_of_ms, :unique_no_of_ms, :no_of_cc_closed, :total_no_of_cc, :unique_no_of_cc, :no_of_wsr_closed, :total_no_of_wsr, :unique_no_of_wsr)
   end
 end
